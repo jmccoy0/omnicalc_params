@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get("/flexible/payment/:int/:yrs/:prin", {:controller => "calculations", :action => "flex_payment"})
   get("payment/new", {:controller => "calculations", :action => "payment_form"})
   get("payment/results", {:controller => "calculations", :action => "payment"})
+  get("random/new", {:controller => "calculations", :action => "random_form"})
+  get("random/results", {:controller => "calculations", :action => "random"})
 end

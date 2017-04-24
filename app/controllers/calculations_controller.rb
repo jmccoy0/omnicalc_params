@@ -61,4 +61,18 @@ class CalculationsController < ApplicationController
     render("calculations/payment.html.erb")
   end
 
+  def random_form
+    render("calculations/random_form.html.erb")
+  end
+
+  def random
+    @user_min = params[:user_min].to_f
+    @user_max = params[:user_max].to_f
+    if @user_min<@user_max
+    @random_number = sprintf("%.4f", rand(@user_min...@user_max))
+  else @random_number = "N/A"
+  end
+    render("calculations/random.html.erb")
+  end
+
 end
