@@ -2,7 +2,8 @@ class CalculationsController < ApplicationController
 # ApplicationController is a master class - CalculationsController is inheriting those characteristics
 
   def square_root
-
+    @user_number = params[:user_number].to_f
+    @square_root = @user_number**0.5
     render("calculations/square_root.html.erb")
   end
 
