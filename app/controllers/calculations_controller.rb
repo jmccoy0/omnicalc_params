@@ -20,9 +20,16 @@ class CalculationsController < ApplicationController
 
   def flex_square_5
     # Parameters: {"num"=>"5"}
-    @user_number = params["num"].to_f
-    @square = @user_number**2
+    @user_number = (params["num"].to_f).round(0)
+    @square = (@user_number**2).round(0)
     render("calculations/flex_square_5.html.erb")
+  end
+
+  def flex_square_root_8
+    @user_number = (params["num"].to_f).round(0)
+    @square_root = (@user_number**0.5).round(2)
+    render("calculations/flex_square_root_8.html.erb")
+
   end
 
 end
