@@ -1,0 +1,27 @@
+<h1>
+  Payment results
+</h1>
+<p>
+  APR
+</p>
+<p>
+  <%= number_to_percentage(@user_int, precision: 4) %>
+</p>
+<p>
+  Number of years
+</p>
+<p>
+  <%= @user_yrs %>
+</p>
+<p>
+  Principal
+</p>
+<p>
+  <%= number_to_currency(@user_prin, precision: 2) %>
+</p>
+<p>
+  Payment
+</p>
+<p>
+  <%= number_to_currency(@monthly_payment, precision: 2) %>
+</p>

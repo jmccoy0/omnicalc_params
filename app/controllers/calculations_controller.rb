@@ -44,4 +44,21 @@ class CalculationsController < ApplicationController
     render("calculations/flex_payment.html.erb")
   end
 
+  def payment_form
+    render("calculations/payment_form.html.erb")
+  end
+
+  def payment
+    @user_int = params[:user_int].to_f
+    @user_yrs = params[:user_yrs].to_f
+    @user_prin = params[:user_prin].to_f
+    int_as_decimal = @user_int*0.01
+    monthly_rate = int_as_decimal/12
+    numerator = monthly_rate*@user_prin
+    months = @user_yrs*12
+    denominator = 1-(1+monthly_rate)**-months
+    @monthly_payment = numerator/denominator
+    render("calculations/payment.html.erb")
+  end
+
 end
